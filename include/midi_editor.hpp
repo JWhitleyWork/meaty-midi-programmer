@@ -15,16 +15,27 @@
 // DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+#ifndef MIDI_EDITOR_HPP
+#define MIDI_EDITOR_HPP
+
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-#include "midi_editor.hpp"
+namespace MeatyMidiEditor
+{
 
-int main() {
-  sf::RenderWindow window{
-    {900, 360}, "MEATY MIDI Programmer", sf::Style::Close};
-  MeatyMidiEditor::MidiEditor midiEditor{window};
-  midiEditor.mainLoop();
+class MidiEditor : public tgui::Gui
+{
+public:
+  MidiEditor(sf::RenderWindow & window);
+  ~MidiEditor() = default;
 
-  return 0;
-}
+  void mainLoop();
+
+private:
+  void build_midi_gui();
+};
+
+}  // namespace MeatyMidiEditor
+
+#endif  // MIDI_EDITOR_HPP
