@@ -22,7 +22,7 @@
 
 int main() {
   sf::RenderWindow window{
-    {900, 360}, "MEATY MIDI Programmer", sf::Style::Close};
+    {930, 330}, "MEATY MIDI Programmer", sf::Style::Close};
   MeatyMidiEditor::MidiEditor midiEditor{window};
   midiEditor.mainLoop();
 
