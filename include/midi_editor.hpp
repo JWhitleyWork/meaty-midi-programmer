@@ -34,6 +34,10 @@ public:
 
 private:
   void build_midi_gui();
+  void build_left_controls(tgui::Group::Ptr left_controls_group);
+  void build_right_controls(tgui::Group::Ptr right_controls_group);
+
+  const float inter_button_spacing = 0.005f;
 };
 
 }  // namespace MeatyMidiEditor
